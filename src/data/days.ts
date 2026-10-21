@@ -104,7 +104,7 @@ const seeds: Seed[] = [
   [25, "My Signet Ring", "Haggai 2:20–23", "prophet"],
   [26, "Take Off His Filthy Clothes", "Zechariah 1:1–6; 3:1–10", "prophet"],
   [27, "Not by Might nor by Power", "Zechariah 4:1–14", "prophet"],
-  [28, "The Man Whose Name is the Branch", "Zechariah 6:9–15; 8:1–8", "prophet"],
+  [28, "The Man Whose Name Is the Branch", "Zechariah 6:9–15; 8:1–8", "prophet"],
   [29, "Your King Comes to You, Lowly", "Zechariah 9:9–13", "prophet"],
   [30, "The Prophets Stand Beside the Builders", "Ezra 5:1–2", "ezraneh"],
   [31, "An Honest Answer at the Building Site", "Ezra 5:3–17", "ezraneh"],
@@ -219,5 +219,7 @@ export function getDay(day: number): Day | undefined {
 }
 
 export function bibleGatewayUrl(passage: string): string {
-  return `https://www.biblegateway.com/passage/?search=${encodeURIComponent(passage)}&version=NIV`;
+  // Explanatory notes are useful in the reading label, but are not Bible references.
+  const reference = passage.replace(/\\s*\\([^)]*\\)\\s*$/, "").trim();
+  return `https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference)}&version=NIV`;
 }
