@@ -1,0 +1,31 @@
+name: Smoke test public RESTORE site
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          for path in / /day/22 /day/55 /day/97 /day/112; do
+            url="https://restore-devotional.vercel.app${path}"
+            echo "Checking ${url}"
+            code=$(curl -L -sS --max-time 30 -o /tmp/restore-page -w "%{http_code}" "${url}")
+            echo "HTTP ${code}; bytes $(wc -c </tmp/restore-page)"
+            test "${code}" = "200"
+            test "$(wc -c </tmp/restore-page)" -gt 1000
+            if [[ "${path}" == "/day/112" ]]; then
+              grep -q 'Until He Comes' /tmp/restore-page
+            fi
+            if [[ "${path}" == "/day/22" ]]; then
+              grep -q 'Consider Your Ways' /tmp/restore-page
+            fi
+          done
