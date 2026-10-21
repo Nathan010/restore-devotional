@@ -1,6 +1,7 @@
 import type { CategoryKey } from "./categories";
 import { devotionals1to10 } from "./devotionals-1-10";
 import { devotionals11to21 } from "./devotionals-11-21";
+import { devotionals98to112 } from "./devotionals-98-112";
 
 export type Day = {
   day: number;
@@ -168,15 +169,15 @@ const seeds: Seed[] = [
   [96, "An Abrupt Ending, and a Final Prayer", "Nehemiah 13:28–31", "ezraneh"],
   [97, "Two Books, One Story", "Nehemiah 13:31b", "ezraneh"],
   [98, "Blemished Sacrifices, Halfhearted Worship", "Malachi 1:6–14", "prophet"],
-  [99, '"Has Not the One God Made Us One?"', "Malachi 2:10–16", "prophet"],
+  [99, "Do We Not All Have One Father?", "Malachi 2:10–16", "prophet"],
   [100, "Robbing God", "Malachi 3:6–12", "prophet"],
   [101, "A Book of Remembrance, and Elijah to Come", "Malachi 3:16–4:6", "prophet"],
-  [102, "Worship in Spirit and Truth", "John 4:19–24", "nt"],
+  [102, "Worship in Spirit and Truth", "John 4:19–26", "nt"],
   [103, "Living Stones, a Spiritual House", "1 Peter 2:4–10", "nt"],
   [104, "A Better Covenant", "Hebrews 8:6–13", "nt"],
   [105, "A Better Sacrifice, Once for All", "Hebrews 9:11–14", "nt"],
   [106, "Confidence to Draw Near", "Hebrews 10:19–25", "nt"],
-  [107, "Pentecost: the Spirit Poured Out", "Acts 2:1–21, 37–41", "nt"],
+  [107, "Pentecost: the Spirit Poured Out", "Acts 2:1–41", "nt"],
   [108, "Circumcision of the Heart, One Family", "Galatians 3:26–29; Romans 2:28–29", "nt"],
   [109, "Everything Written About Me Must Be Fulfilled", "Luke 24:44–49", "nt"],
   [110, "A New Heaven and a New Earth", "Revelation 21:1–8", "nt"],
@@ -189,6 +190,7 @@ type Written = { body: string[]; reflection: string[] };
 const written: Record<number, Written> = {
   ...devotionals1to10,
   ...devotionals11to21,
+  ...devotionals98to112,
 };
 
 export const days: Day[] = seeds.map(([day, title, passage, category]) => {
