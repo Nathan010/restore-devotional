@@ -220,6 +220,6 @@ export function getDay(day: number): Day | undefined {
 
 export function bibleGatewayUrl(passage: string): string {
   // Explanatory notes are useful in the reading label, but are not Bible references.
-  const reference = passage.replace(/\\s*\\([^)]*\\)\\s*$/, "").trim();
+  const reference = passage.replace(/\s*\([^)]*\)\s*$/, "").trim();
   return `https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference)}&version=NIV`;
 }
