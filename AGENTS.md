@@ -1,12 +1,10 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# RESTORE — Development notes
 
-- Keep approved devotional bodies in day-range data modules merged into the central day registry, so all existing reader and progress views share one content source.
+RESTORE is maintained independently in GitHub and deployed on Vercel. Do not use Lovable for development, publishing, or website edits.
+
+- Keep approved devotional bodies in day-range TypeScript data modules and merge them into `src/data/days.ts`.
+- Preserve wording, paragraph boundaries, Scripture references and reflection questions from approved manuscripts.
+- Keep all 112 days accessible, with progress tracking and memory-verse practice working.
+- Use TanStack Start, Vite, Nitro, React and Tailwind; build with `npm install && npm run build`.
+- Check the GitHub Actions build and live-site smoke test before treating a release as complete.
+- Do not rewrite published Git history.
