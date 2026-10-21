@@ -1,6 +1,7 @@
 import type { CategoryKey } from "./categories";
 import { devotionals1to10 } from "./devotionals-1-10";
 import { devotionals11to21 } from "./devotionals-11-21";
+import { devotionals22to29 } from "./devotionals-22-29";
 import { devotionals30to41 } from "./devotionals-30-41";
 import { devotionals42to55 } from "./devotionals-42-55";
 import { devotionals56to69 } from "./devotionals-56-69";
@@ -98,13 +99,13 @@ const seeds: Seed[] = [
   [20, "The Accusation Letter", "Ezra 4:6–16", "ezraneh"],
   [21, "When the Work Stops", "Ezra 4:17–24", "ezraneh"],
   [22, "Consider Your Ways", "Haggai 1:1–11", "prophet"],
-  [23, "The Spirit Stirred, and They Obeyed", "Haggai 1:12–15", "prophet"],
-  [24, "The Latter Glory, and a Holiness That Isn't Contagious", "Haggai 2:1–19", "prophet"],
-  [25, "Zerubbabel, the Signet Ring", "Haggai 2:20–23", "prophet"],
-  [26, "Return to Me; Filthy Garments and the Branch", "Zechariah 1:1–6; 3:1–10", "prophet"],
-  [27, "Not by Might, Nor by Power", "Zechariah 4:1–14", "prophet"],
-  [28, "The Branch Who Will Build the Temple", "Zechariah 6:9–15; 8:1–8", "prophet"],
-  [29, "Your King Is Coming to You, Humble", "Zechariah 9:9–13", "prophet"],
+  [23, "I Am with You", "Haggai 1:12–15", "prophet"],
+  [24, "A Greater Glory, a Deeper Need", "Haggai 2:1–19", "prophet"],
+  [25, "My Signet Ring", "Haggai 2:20–23", "prophet"],
+  [26, "Take Off His Filthy Clothes", "Zechariah 1:1–6; 3:1–10", "prophet"],
+  [27, "Not by Might nor by Power", "Zechariah 4:1–14", "prophet"],
+  [28, "The Man Whose Name is the Branch", "Zechariah 6:9–15; 8:1–8", "prophet"],
+  [29, "Your King Comes to You, Lowly", "Zechariah 9:9–13", "prophet"],
   [30, "The Prophets Stand Beside the Builders", "Ezra 5:1–2", "ezraneh"],
   [31, "An Honest Answer at the Building Site", "Ezra 5:3–17", "ezraneh"],
   [32, "A Pagan King Pays for the Temple", "Ezra 6:1–12", "ezraneh"],
@@ -195,6 +196,7 @@ type Written = { body: string[]; reflection: string[] };
 const written: Record<number, Written> = {
   ...devotionals1to10,
   ...devotionals11to21,
+  ...devotionals22to29,
   ...devotionals30to41,
   ...devotionals42to55,
   ...devotionals56to69,
